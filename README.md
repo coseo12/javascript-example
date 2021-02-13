@@ -14,29 +14,19 @@
 
 ### 1.2 Example
 
-- [x] 윈도우 사이즈표기
-- [x] 윈도우 좌표
-- [x] 윈도우 스크롤링
-- [x] 윈도우 로드
+- [x] 1.윈도우 사이즈표기
+- [x] 2.윈도우 좌표
+- [x] 3.윈도우 스크롤링
+- [x] 4.윈도우 로드
 
 ## 2. Web APIs 실전
 
-- [x] 좌표 찾아 007
-- [x] 토끼를 찾아라
+- [x] 1.좌표 찾아 007
+- [x] 2.토끼를 찾아라
 
 ## 3. DOM 완전 정복
 
-### 3.1 성능 보장 렌더링 순서 ⚡️
-
-- 📜 requests/response → loading → scripting → rendering → layout → painting 🌈
-
-- DOM → CSSOM → RenderTree → layout → paint → composition
-
-- Construction 영역: DOM, CSSOM, RenderTree
-
-- Operation 영역: layout, paint, composition
-
-### 3.2 Reference
+### 3.1 Reference
 
 - [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [DOM API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API)
@@ -45,10 +35,22 @@
 - [CSSOM](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model)
 - [CSS Triggers](https://csstriggers.com/)
 
-### 3.3 Example
+### 3.2 Example
 
-- [x] DOM Example
-- [x] 좌표 찾아 007 성능 개선
+- [x] 1.DOM Example
+- [x] 2.좌표 찾아 007 성능 개선
+
+### 3.3 Note
+
+#### 성능 보장 렌더링 순서 ⚡️
+
+- 📜 requests/response → loading → scripting → rendering → layout → painting 🌈
+
+- DOM → CSSOM → RenderTree → layout → paint → composition
+
+- Construction 영역: DOM, CSSOM, RenderTree
+
+- Operation 영역: layout, paint, composition
 
 ## 4. DOM 완전 정복 실전
 

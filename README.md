@@ -26,6 +26,30 @@
 
 ## 3. DOM 완전 정복
 
+### 3.1 성능 보장 렌더링 순서 ⚡️
+
+- 📜 requests/response → loading → scripting → rendering → layout → painting 🌈
+
+- DOM → CSSOM → RenderTree → layout → paint → composition
+
+- Construction 영역: DOM, CSSOM, RenderTree
+
+- Operation 영역: layout, paint, composition
+
+### 3.2 Reference
+
+- [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+- [DOM API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API)
+- [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node)
+- [Event Target](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
+- [CSSOM](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model)
+- [CSS Triggers](https://csstriggers.com/)
+
+### 3.3 Example
+
+- [x] DOM Example
+- [x] 좌표 찾아 007 성능 개선
+
 ## 4. DOM 완전 정복 실전
 
 ## 5. 이벤트
@@ -34,6 +58,6 @@
 
 ## 7. 실전: 게임만들기 🥕🥕
 
-## 8. 리팩토링으로 배우는 코딩팁 ❤️
+## 8. 리팩토링으로 배우는 코딩팁 ✨
 
 ## 9. Event loop 🔥

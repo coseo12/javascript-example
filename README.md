@@ -42,7 +42,7 @@
 
 ### 3.3 Note
 
-#### 성능 보장 렌더링 순서 ⚡️
+#### 3.3.1 성능 보장 렌더링 순서 ⚡️
 
 - 📜 requests/response → loading → scripting → rendering → layout → painting 🌈
 
@@ -53,6 +53,14 @@
 - Operation 영역: layout, paint, composition
 
 ## 4. DOM 완전 정복 실전
+
+### 4.1 Reference
+
+- [FontAwesome](https://fontawesome.com/)
+
+### 4.2 Example
+
+- [x] 1.쇼핑 목록앱 만들기
 
 ## 5. 이벤트
 

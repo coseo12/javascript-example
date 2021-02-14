@@ -178,12 +178,16 @@
 
 ## 6. 자바스크립트 보충 수업 📙
 
+- [기본 자바스크립트 강의](https://www.youtube.com/playlist?list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2)
+
 ## 7. 실전: 게임만들기 🥕🥕
+
+- [ ] 당근 뽑기 게임 만들기
 
 ## 8. 리팩토링으로 배우는 코딩팁 ✨
 
+- [ ] 당근 뽑기 게임 리팩토링
+
 ## 9. Event loop 🔥
 
-```
-
-```
+## 마무리 하며 ❤️

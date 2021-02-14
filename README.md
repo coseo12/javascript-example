@@ -153,7 +153,17 @@
   ```
 
 - 5-4. 우아한 이벤트 위임 (BAD vs GOOD)
+
   ```js
+  // BAD
+  const lis = document.querySelectorAll('li');
+  lis.forEach(li => {
+    li.addEventListener('click', event => {
+      event.target.classList.add('selected');
+    });
+  });
+
+  // GOOD
   const ul = document.querySelector('ul');
   ul.addEventListener('click', event => {
     if (event.target.tagName == 'LI') {
@@ -161,6 +171,7 @@
     }
   });
   ```
+
 - 5-5. 실습2. 쇼핑 목록앱 개선하기
 
   - [x] 2.쇼핑 목록앱 개선하기

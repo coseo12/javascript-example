@@ -99,6 +99,9 @@
 
 - 5-1. Events 정확하게 이해하기 + 종류들
 
+  - [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+  - [Events Category](https://developer.mozilla.org/en-US/docs/Web/Events)
+
   ```js
   const div = document.createElement('div');
   const listener = () => console.log('clicked');
@@ -113,20 +116,54 @@
   div.removeEventListener('click', listener);
   ```
 
-  - [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
-  - [Events Category](https://developer.mozilla.org/en-US/docs/Web/Events)
-
 - 5-2. 실습1. Bubbling & Capturing & Tip
 
-  - [ ] 1.Bubbling & Capturing & Tip
+  - [Bubbling and Capturing](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture)
+  - [x] 1.Bubbling & Capturing & Tip
+
+  ```js
+  const outer = document.createElement('div');
+  const button = document.createElement('button');
+  outer.append(button);
+
+  button.addEventListener('click', evnet => {
+    event.stopImmediatePropagation(); //! 가능하면 사용하지 말것
+    event.stopPropagation(); //! 가능하면 사용하지 말것
+  });
+
+  outer.addEventListener('click', evnet => {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+  });
+  ```
 
 - 5-3. 브라우저를 취소하라! 유의할 점
 
-- 5-4. 우아한 이벤트 위임 (BAD vs GOOD)
+  ```js
+  const input = document.createElement('input');
 
+  input.addEventListener(
+    'click',
+    evnet => {
+      event.preventDefault(); //! 기본 행동 취소
+    },
+    { passive: false } //! 기본 True 속성이면 사용하지 말 것
+  );
+  ```
+
+- 5-4. 우아한 이벤트 위임 (BAD vs GOOD)
+  ```js
+  const ul = document.querySelector('ul');
+  ul.addEventListener('click', event => {
+    if (event.target.tagName == 'LI') {
+      event.target.classList.add('selected');
+    }
+  });
+  ```
 - 5-5. 실습2. 쇼핑 목록앱 개선하기
 
-  - [ ] 2.쇼핑 목록앱 개선하기
+  - [x] 2.쇼핑 목록앱 개선하기
 
 ## 6. 자바스크립트 보충 수업 📙
 

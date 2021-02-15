@@ -190,4 +190,148 @@
 
 ## 9. Event loop 🔥
 
+- 9-1. 프로세스와 쓰레드란?
+
+  - Process
+    운영체제 위에서 독립적으로 실행되는 프로그램
+
+    | Process | Process | Process |
+    | :-----: | :-----: | :-----: |
+    |  Code   |  Code   |  Code   |
+    |  Stack  |  Stack  |  Stack  |
+    |  Heap   |  Heap   |  Heap   |
+    |  Data   |  Data   |  Data   |
+
+    - Code
+      프로그램 실행을 위한 코드
+
+    - Stack
+      함수들의 어떤 순서로 실행 되는지 함수가 종료 시 어디로 가야하는지 정보 저장
+
+    - Heap
+      오브젝트 및 데이터 저장(동적할당 변수)
+
+    - Data
+      전역변수 및 스태틱 변수
+
+  - Thread
+    한 프로세스 안에서 동작하는 여러 스택
+
+    |            Process             |
+    | :----------------------------: |
+    |         Code Heap Data         |
+    | Thread1(Stack), Thread2(Stack) |
+
+- 9-2. 자바스크립트 런타임 환경(엔진 이해, 스택 개념 정리)
+  Single Threaded 언어
+
+  |    Javascript Engine    |
+  | :---------------------: |
+  | Memory Heap, Call Stack |
+
+  - Memory Heap
+    데이터 할당(동적 할당)
+
+  - Call Stack
+    함수 실행 순서 저장(LIFO)
+
+- 9-3. 브라우저 런타임 환경 이해(중요, 큐 개념정리)
+
+  Web APIs를 통하여 비동기 실행 (DOM API,setTimeout,setInterval,fetch,event listener ...)
+
+  - Queue(FIFO)
+
+  - Event loop
+    Call stack 이 비워지면 Call stack으로 이동시킴
+
+- 9-4. Render Sequence, Microtask Queue, TaskQueue
+
+  |                   Render Sequence                   |         Microtask Queue         |         TaskQueue          |
+  | :-------------------------------------------------: | :-----------------------------: | :------------------------: |
+  | Request Animation Frame, Render Tree, Layout, Paint | Promise then, mutation observer | setTimeout, click callback |
+
+- 9-5. 데모1. 나선임 반박하는 법
+
+  ```js
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    const el = document.createElement('h1');
+    document.body.appendChild(el); // 순서 상관 없음
+    el.style.color = 'red';
+    element.innerText = 'hello';
+  });
+  ```
+
+- 9-6. 데모2. 후배에게 가르치기
+
+  ```js
+  const button = document.querySelector('button');
+  const box = document.querySelector('.box');
+  button.addEventListener('click', () => {
+    box.style.transition = 'transform 1s ease-in';
+    box.style.transform = 'translateX(800px)';
+    box.style.transform = 'translateX(500px)'; // 마지막 transform 반영
+  });
+  ```
+
+- 9-7. 데모3. 브라우저 죽이기
+
+  ```js
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    while (true) {
+      // repeat 🎃
+    }
+  });
+  ```
+
+- 9-8. 데모4. setTimeout의 비밀
+
+  ```js
+  function handleClick() {
+    console.log('handleClick');
+    setTimeout(() => {
+      console.log('setTimeout');
+      handleClick();
+    }, 0);
+  }
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    handleClick();
+  });
+  ```
+
+- 9-9. 데모5. Promise의 비밀
+
+  ```js
+  function handleClick() {
+    console.log('handleClick');
+    Promise.resolve(0).then(() => {
+      console.log('then');
+      handleClick();
+    });
+  }
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    handleClick();
+  });
+  ```
+
+- 9-10. 데모6. RAF의 비밀
+
+  ```js
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    requestAnimationFrame(() => {
+      document.body.style.backgroundColor = 'beige';
+    });
+    requestAnimationFrame(() => {
+      document.body.style.backgroundColor = 'orange';
+    });
+    requestAnimationFrame(() => {
+      document.body.style.backgroundColor = 'red'; // 마지막 bg 반영
+    });
+  });
+  ```
+
 ## 마무리 하며 ❤️
